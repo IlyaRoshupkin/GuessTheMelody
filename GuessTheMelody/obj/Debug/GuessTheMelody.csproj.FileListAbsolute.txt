@@ -1,0 +1,11 @@
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\bin\Debug\GuessTheMelody.exe.config
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\bin\Debug\GuessTheMelody.exe
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\bin\Debug\GuessTheMelody.pdb
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.csprojAssemblyReference.cache
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.fMain.resources
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.Properties.Resources.resources
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.csproj.GenerateResource.cache
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.csproj.CoreCompileInputs.cache
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.exe
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.pdb
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.fSettigs.resources

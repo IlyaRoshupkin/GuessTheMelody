@@ -9,3 +9,9 @@ C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelo
 C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.exe
 C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.pdb
 C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.fSettigs.resources
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\Interop.WMPLib.dll
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.csproj.ResolveComReference.cache
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.fGame.resources
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\bin\Debug\Interop.WMPLib.dll
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\bin\Debug\AxInterop.WMPLib.dll

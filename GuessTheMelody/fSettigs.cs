@@ -27,6 +27,8 @@ namespace GuessTheMelody
                     cbAllDir.Checked ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
                 lbMusicList.Items.Clear();
                 lbMusicList.Items.AddRange(music_list);
+                Victorina.playList.Clear();
+                Victorina.playList.AddRange(music_list);
             }
         }
 

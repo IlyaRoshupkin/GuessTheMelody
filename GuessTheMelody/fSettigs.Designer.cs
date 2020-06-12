@@ -34,6 +34,13 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCansel = new System.Windows.Forms.Button();
             this.cbAllDir = new System.Windows.Forms.CheckBox();
+            this.gbParams = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbGameDuration = new System.Windows.Forms.ComboBox();
+            this.cbMusicDuration = new System.Windows.Forms.ComboBox();
+            this.cbRandomStart = new System.Windows.Forms.CheckBox();
+            this.gbParams.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbMusicList
@@ -48,7 +55,7 @@
             // btnLoad
             // 
             this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnLoad.Location = new System.Drawing.Point(35, 275);
+            this.btnLoad.Location = new System.Drawing.Point(34, 270);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(100, 40);
             this.btnLoad.TabIndex = 1;
@@ -59,7 +66,7 @@
             // btnClearList
             // 
             this.btnClearList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnClearList.Location = new System.Drawing.Point(198, 275);
+            this.btnClearList.Location = new System.Drawing.Point(197, 270);
             this.btnClearList.Name = "btnClearList";
             this.btnClearList.Size = new System.Drawing.Size(100, 40);
             this.btnClearList.TabIndex = 2;
@@ -69,7 +76,7 @@
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnOK.Location = new System.Drawing.Point(454, 376);
+            this.btnOK.Location = new System.Drawing.Point(520, 487);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(113, 40);
             this.btnOK.TabIndex = 3;
@@ -80,7 +87,7 @@
             // btnCansel
             // 
             this.btnCansel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCansel.Location = new System.Drawing.Point(622, 376);
+            this.btnCansel.Location = new System.Drawing.Point(664, 487);
             this.btnCansel.Name = "btnCansel";
             this.btnCansel.Size = new System.Drawing.Size(113, 40);
             this.btnCansel.TabIndex = 4;
@@ -92,18 +99,95 @@
             // 
             this.cbAllDir.AutoSize = true;
             this.cbAllDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cbAllDir.Location = new System.Drawing.Point(497, 266);
+            this.cbAllDir.Location = new System.Drawing.Point(520, 275);
             this.cbAllDir.Name = "cbAllDir";
             this.cbAllDir.Size = new System.Drawing.Size(200, 33);
             this.cbAllDir.TabIndex = 5;
             this.cbAllDir.Text = "All Directories";
             this.cbAllDir.UseVisualStyleBackColor = true;
             // 
+            // gbParams
+            // 
+            this.gbParams.Controls.Add(this.cbRandomStart);
+            this.gbParams.Controls.Add(this.cbMusicDuration);
+            this.gbParams.Controls.Add(this.cbGameDuration);
+            this.gbParams.Controls.Add(this.label2);
+            this.gbParams.Controls.Add(this.label1);
+            this.gbParams.Location = new System.Drawing.Point(0, 316);
+            this.gbParams.Name = "gbParams";
+            this.gbParams.Size = new System.Drawing.Size(508, 218);
+            this.gbParams.TabIndex = 6;
+            this.gbParams.TabStop = false;
+            this.gbParams.Text = "Parameters";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Game Duration";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Music Duration";
+            // 
+            // cbGameDuration
+            // 
+            this.cbGameDuration.FormattingEnabled = true;
+            this.cbGameDuration.Items.AddRange(new object[] {
+            "5",
+            "10",
+            "15",
+            "20",
+            "25",
+            "30"});
+            this.cbGameDuration.Location = new System.Drawing.Point(150, 30);
+            this.cbGameDuration.Name = "cbGameDuration";
+            this.cbGameDuration.Size = new System.Drawing.Size(57, 24);
+            this.cbGameDuration.TabIndex = 2;
+            this.cbGameDuration.Text = "20";
+            // 
+            // cbMusicDuration
+            // 
+            this.cbMusicDuration.FormattingEnabled = true;
+            this.cbMusicDuration.Items.AddRange(new object[] {
+            "5",
+            "10",
+            "15",
+            "20",
+            "25",
+            "30"});
+            this.cbMusicDuration.Location = new System.Drawing.Point(150, 69);
+            this.cbMusicDuration.Name = "cbMusicDuration";
+            this.cbMusicDuration.Size = new System.Drawing.Size(57, 24);
+            this.cbMusicDuration.TabIndex = 3;
+            this.cbMusicDuration.Text = "10";
+            // 
+            // cbRandomStart
+            // 
+            this.cbRandomStart.AutoSize = true;
+            this.cbRandomStart.Checked = true;
+            this.cbRandomStart.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbRandomStart.Location = new System.Drawing.Point(15, 120);
+            this.cbRandomStart.Name = "cbRandomStart";
+            this.cbRandomStart.Size = new System.Drawing.Size(154, 21);
+            this.cbRandomStart.TabIndex = 4;
+            this.cbRandomStart.Text = "Random Start Song";
+            this.cbRandomStart.UseVisualStyleBackColor = true;
+            // 
             // fSettigs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 539);
+            this.Controls.Add(this.gbParams);
             this.Controls.Add(this.cbAllDir);
             this.Controls.Add(this.btnCansel);
             this.Controls.Add(this.btnOK);
@@ -112,6 +196,9 @@
             this.Controls.Add(this.lbMusicList);
             this.Name = "fSettigs";
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.fSettigs_Load);
+            this.gbParams.ResumeLayout(false);
+            this.gbParams.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +212,11 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCansel;
         private System.Windows.Forms.CheckBox cbAllDir;
+        private System.Windows.Forms.GroupBox gbParams;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox cbRandomStart;
+        private System.Windows.Forms.ComboBox cbMusicDuration;
+        private System.Windows.Forms.ComboBox cbGameDuration;
     }
 }

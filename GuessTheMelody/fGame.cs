@@ -12,6 +12,8 @@ namespace GuessTheMelody
 {
     public partial class fGame : Form
     {
+        Random rnd = new Random();
+
         public fGame()
         {
             InitializeComponent();
@@ -19,7 +21,29 @@ namespace GuessTheMelody
 
         private void btnNextSong_Click(object sender, EventArgs e)
         {
-            WMP.URL = Victorina.playList[1];
+            PlayNextSong();
+        }
+
+        private void PlayNextSong()
+        {
+            int n = rnd.Next(0, Victorina.playList.Count);
+            WMP.URL = Victorina.playList[n];
+            Victorina.playList.RemoveAt(n);
+        }
+
+        private void fGame_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            WMP.Ctlcontrols.stop();
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            WMP.Ctlcontrols.pause();
+        }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            WMP.Ctlcontrols.play();
         }
     }
 }

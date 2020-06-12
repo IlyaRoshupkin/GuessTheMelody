@@ -34,13 +34,14 @@
             this.btnNextSong = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblPlayer3Points = new System.Windows.Forms.Label();
+            this.lblPlayer1Points = new System.Windows.Forms.Label();
             this.lblPlayer2Points = new System.Windows.Forms.Label();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lblCount = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblMusicDuration = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,15 +86,15 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Player 2";
             // 
-            // lblPlayer3Points
+            // lblPlayer1Points
             // 
-            this.lblPlayer3Points.AutoSize = true;
-            this.lblPlayer3Points.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblPlayer3Points.Location = new System.Drawing.Point(175, 102);
-            this.lblPlayer3Points.Name = "lblPlayer3Points";
-            this.lblPlayer3Points.Size = new System.Drawing.Size(32, 32);
-            this.lblPlayer3Points.TabIndex = 4;
-            this.lblPlayer3Points.Text = "0";
+            this.lblPlayer1Points.AutoSize = true;
+            this.lblPlayer1Points.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPlayer1Points.Location = new System.Drawing.Point(175, 102);
+            this.lblPlayer1Points.Name = "lblPlayer1Points";
+            this.lblPlayer1Points.Size = new System.Drawing.Size(32, 32);
+            this.lblPlayer1Points.TabIndex = 4;
+            this.lblPlayer1Points.Text = "0";
             // 
             // lblPlayer2Points
             // 
@@ -139,7 +140,7 @@
             // 
             this.lblCount.AutoSize = true;
             this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblCount.Location = new System.Drawing.Point(374, 115);
+            this.lblCount.Location = new System.Drawing.Point(374, 91);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(42, 46);
             this.lblCount.TabIndex = 8;
@@ -150,25 +151,37 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblMusicDuration
+            // 
+            this.lblMusicDuration.AutoSize = true;
+            this.lblMusicDuration.Location = new System.Drawing.Point(379, 195);
+            this.lblMusicDuration.Name = "lblMusicDuration";
+            this.lblMusicDuration.Size = new System.Drawing.Size(16, 17);
+            this.lblMusicDuration.TabIndex = 9;
+            this.lblMusicDuration.Text = "0";
+            // 
             // fGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblMusicDuration);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.lblPlayer2Points);
-            this.Controls.Add(this.lblPlayer3Points);
+            this.Controls.Add(this.lblPlayer1Points);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnNextSong);
             this.Controls.Add(this.WMP);
+            this.KeyPreview = true;
             this.Name = "fGame";
             this.Text = "Game";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fGame_FormClosed);
             this.Load += new System.EventHandler(this.fGame_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fGame_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -181,12 +194,13 @@
         private System.Windows.Forms.Button btnNextSong;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblPlayer3Points;
+        private System.Windows.Forms.Label lblPlayer1Points;
         private System.Windows.Forms.Label lblPlayer2Points;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblMusicDuration;
     }
 }

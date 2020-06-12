@@ -13,6 +13,7 @@ namespace GuessTheMelody
     public partial class fGame : Form
     {
         Random rnd = new Random();
+        int musicDuration;
 
         public fGame()
         {
@@ -26,27 +27,38 @@ namespace GuessTheMelody
 
         private void PlayNextSong()
         {
+            if (Victorina.playList.Count == 0) EndGame();
+            musicDuration = Victorina.musicDuration;
             int n = rnd.Next(0, Victorina.playList.Count);
             WMP.URL = Victorina.playList[n];
             Victorina.playList.RemoveAt(n);
             lblCount.Text = Victorina.playList.Count.ToString();
-            progressBar1.Value = 0;
             timer1.Start();
+            lblMusicDuration.Text = musicDuration.ToString();
         }
 
         private void fGame_FormClosed(object sender, FormClosedEventArgs e)
         {
-            WMP.Ctlcontrols.stop();
-            timer1.Stop();
+            GamePause();
         }
 
         private void btnPause_Click(object sender, EventArgs e)
+        {
+            GamePause();
+        }
+
+        private void GamePause()
         {
             WMP.Ctlcontrols.pause();
             timer1.Stop();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
+        {
+            GamePlay();
+        }
+
+        private void GamePlay()
         {
             WMP.Ctlcontrols.play();
             timer1.Start();
@@ -57,15 +69,45 @@ namespace GuessTheMelody
             lblCount.Text = Victorina.playList.Count.ToString();
             progressBar1.Value = 0;
             progressBar1.Minimum = 0;
-            progressBar1.Maximum = Victorina.musicDuration;
+            progressBar1.Maximum = Victorina.gameDuration;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            progressBar1.Value++;
             if(progressBar1.Value == progressBar1.Maximum)
             {
-                timer1.Stop();
+                EndGame();
+                return;
+            }
+            if (musicDuration == 0) PlayNextSong();
+            progressBar1.Value++;
+            musicDuration--;
+            lblMusicDuration.Text = musicDuration.ToString();
+        }
+
+        private void EndGame()
+        {
+            timer1.Stop();
+            WMP.Ctlcontrols.stop();
+        }
+
+        private void fGame_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.A)
+            {
+                GamePause();
+                if(MessageBox.Show("Is the answer right?","Player 1",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    lblPlayer1Points.Text = Convert.ToString(Convert.ToInt32(lblPlayer1Points)+1);
+                    return;
+                }
+                GamePlay();
+                if (MessageBox.Show("Is the answer right?", "Player 2", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    lblPlayer2Points.Text = Convert.ToString(Convert.ToInt32(lblPlayer2Points) + 1);
+                    return;
+                }
+                GamePlay();
             }
         }
     }

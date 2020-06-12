@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGame));
             this.WMP = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnNextSong = new System.Windows.Forms.Button();
@@ -37,6 +38,9 @@
             this.lblPlayer2Points = new System.Windows.Forms.Label();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,7 +108,7 @@
             // btnPause
             // 
             this.btnPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnPause.Location = new System.Drawing.Point(315, 311);
+            this.btnPause.Location = new System.Drawing.Point(355, 313);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(160, 113);
             this.btnPause.TabIndex = 6;
@@ -115,7 +119,7 @@
             // btnContinue
             // 
             this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnContinue.Location = new System.Drawing.Point(506, 311);
+            this.btnContinue.Location = new System.Drawing.Point(545, 313);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(213, 113);
             this.btnContinue.TabIndex = 6;
@@ -123,11 +127,36 @@
             this.btnContinue.UseVisualStyleBackColor = true;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(140, 242);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(526, 23);
+            this.progressBar1.TabIndex = 7;
+            this.progressBar1.Value = 50;
+            // 
+            // lblCount
+            // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCount.Location = new System.Drawing.Point(374, 115);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(42, 46);
+            this.lblCount.TabIndex = 8;
+            this.lblCount.Text = "0";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // fGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCount);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.lblPlayer2Points);
@@ -139,6 +168,7 @@
             this.Name = "fGame";
             this.Text = "Game";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fGame_FormClosed);
+            this.Load += new System.EventHandler(this.fGame_Load);
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -155,5 +185,8 @@
         private System.Windows.Forms.Label lblPlayer2Points;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnContinue;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.Timer timer1;
     }
 }

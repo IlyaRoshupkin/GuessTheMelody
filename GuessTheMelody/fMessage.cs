@@ -16,5 +16,10 @@ namespace GuessTheMelody
         {
             InitializeComponent();
         }
+
+        private void lblAnswer_Click(object sender, EventArgs e)
+        {
+            lblAnswer.Text = Victorina.answer;
+        }
     }
 }

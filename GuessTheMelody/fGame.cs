@@ -37,6 +37,7 @@ namespace GuessTheMelody
                 lblCount.Text = Victorina.playList.Count.ToString();
                 timer1.Start();
                 lblMusicDuration.Text = musicDuration.ToString();
+                Victorina.answer = System.IO.Path.GetFileNameWithoutExtension(WMP.URL);
             }
         }
 
@@ -127,6 +128,12 @@ namespace GuessTheMelody
             if (Victorina.randomStart)
                 if (WMP.openState == WMPLib.WMPOpenState.wmposMediaOpen)
                     WMP.Ctlcontrols.currentPosition = rnd.Next(0, (int)WMP.currentMedia.duration / 2);
+        }
+
+        private void lblPlayer1Points_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left) (sender as Label).Text = Convert.ToString(Convert.ToInt32((sender as Label).Text) + 1);
+            if (e.Button == MouseButtons.Right) (sender as Label).Text = Convert.ToString(Convert.ToInt32((sender as Label).Text) - 1);
         }
     }
 }

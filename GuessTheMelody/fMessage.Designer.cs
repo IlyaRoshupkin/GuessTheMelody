@@ -32,6 +32,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.lblPlayer = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblAnswer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -76,11 +77,23 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Did the player guess the melody? ";
             // 
+            // lblAnswer
+            // 
+            this.lblAnswer.AutoSize = true;
+            this.lblAnswer.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer.Location = new System.Drawing.Point(10, 335);
+            this.lblAnswer.Name = "lblAnswer";
+            this.lblAnswer.Size = new System.Drawing.Size(222, 33);
+            this.lblAnswer.TabIndex = 4;
+            this.lblAnswer.Text = "The right answer";
+            this.lblAnswer.Click += new System.EventHandler(this.lblAnswer_Click);
+            // 
             // fMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 580);
+            this.ClientSize = new System.Drawing.Size(604, 580);
+            this.Controls.Add(this.lblAnswer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPlayer);
             this.Controls.Add(this.button2);
@@ -97,5 +110,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lblPlayer;
+        private System.Windows.Forms.Label lblAnswer;
     }
 }

@@ -96,6 +96,7 @@
             this.lblPlayer1Points.Size = new System.Drawing.Size(32, 32);
             this.lblPlayer1Points.TabIndex = 4;
             this.lblPlayer1Points.Text = "0";
+            this.lblPlayer1Points.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblPlayer1Points_MouseClick);
             // 
             // lblPlayer2Points
             // 
@@ -106,6 +107,7 @@
             this.lblPlayer2Points.Size = new System.Drawing.Size(32, 32);
             this.lblPlayer2Points.TabIndex = 5;
             this.lblPlayer2Points.Text = "0";
+            this.lblPlayer2Points.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblPlayer1Points_MouseClick);
             // 
             // btnPause
             // 

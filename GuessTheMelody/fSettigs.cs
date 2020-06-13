@@ -39,6 +39,7 @@ namespace GuessTheMelody
             Victorina.gameDuration = Convert.ToInt32(cbGameDuration.Text);
             Victorina.musicDuration = Convert.ToInt32(cbMusicDuration.Text);
             Victorina.randomStart = cbRandomStart.Checked;
+            Victorina.answerTime = Convert.ToInt32(cbAnswerTime.Text);
             Victorina.WriteParam();
             this.Hide();
         }
@@ -49,6 +50,7 @@ namespace GuessTheMelody
             cbGameDuration.Text = Victorina.gameDuration.ToString();
             cbMusicDuration.Text = Victorina.musicDuration.ToString();
             cbRandomStart.Checked = Victorina.randomStart;
+            cbAnswerTime.Text = Victorina.answerTime.ToString();
         }
 
         private void btnCansel_Click(object sender, EventArgs e)

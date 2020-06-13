@@ -35,6 +35,7 @@
             this.btnCansel = new System.Windows.Forms.Button();
             this.cbAllDir = new System.Windows.Forms.CheckBox();
             this.gbParams = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,7 +44,8 @@
             this.cbGameDuration = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbAnswerTime = new System.Windows.Forms.ComboBox();
             this.gbParams.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,6 +114,8 @@
             // 
             // gbParams
             // 
+            this.gbParams.Controls.Add(this.cbAnswerTime);
+            this.gbParams.Controls.Add(this.label5);
             this.gbParams.Controls.Add(this.comboBox1);
             this.gbParams.Controls.Add(this.comboBox2);
             this.gbParams.Controls.Add(this.label3);
@@ -127,6 +131,15 @@
             this.gbParams.TabIndex = 6;
             this.gbParams.TabStop = false;
             this.gbParams.Text = "Parameters";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(314, 30);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(59, 24);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "A";
             // 
             // comboBox2
             // 
@@ -217,14 +230,32 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Game Duration";
             // 
-            // comboBox1
+            // label5
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(314, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(59, 24);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "A";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(232, 120);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Answer time";
+            // 
+            // cbAnswerTime
+            // 
+            this.cbAnswerTime.FormattingEnabled = true;
+            this.cbAnswerTime.Items.AddRange(new object[] {
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbAnswerTime.Location = new System.Drawing.Point(322, 117);
+            this.cbAnswerTime.Name = "cbAnswerTime";
+            this.cbAnswerTime.Size = new System.Drawing.Size(51, 24);
+            this.cbAnswerTime.TabIndex = 10;
+            this.cbAnswerTime.Text = "5";
             // 
             // fSettigs
             // 
@@ -266,5 +297,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbAnswerTime;
+        private System.Windows.Forms.Label label5;
     }
 }

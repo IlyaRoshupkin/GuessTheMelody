@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessTheMelody", "GuessTheMelody.csproj", "{5A8D35B5-EE69-4304-A325-7CADE029D6EA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A7B9CAE0-0A21-4CF3-B875-65E1B8CD17E9}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Downloads\taglibsharp.2.2.0.nupkg = ..\..\..\..\Downloads\taglibsharp.2.2.0.nupkg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

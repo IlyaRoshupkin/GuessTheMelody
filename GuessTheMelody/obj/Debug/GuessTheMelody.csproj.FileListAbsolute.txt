@@ -16,3 +16,9 @@ C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelo
 C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\bin\Debug\Interop.WMPLib.dll
 C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.fMessage.resources
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\bin\Debug\Id3.Net.dll
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\bin\Debug\ID3Tag.Core.dll
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\bin\Debug\JetBrains.Annotations.dll
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\bin\Debug\Id3.Net.xml
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\bin\Debug\JetBrains.Annotations.xml
+C:\Users\roshu\source\repos\GuessTheMelody\GuessTheMelody\obj\Debug\GuessTheMelody.csproj.CopyComplete

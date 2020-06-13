@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace GuessTheMelody
 {
@@ -14,6 +15,7 @@ namespace GuessTheMelody
     {
         Random rnd = new Random();
         int musicDuration;
+        bool[] playersSteps = new bool[2];
 
         public fGame()
         {
@@ -37,7 +39,9 @@ namespace GuessTheMelody
                 lblCount.Text = Victorina.playList.Count.ToString();
                 timer1.Start();
                 lblMusicDuration.Text = musicDuration.ToString();
-                Victorina.answer = System.IO.Path.GetFileNameWithoutExtension(WMP.URL);
+                Victorina.answer = System.IO.Path.GetFullPath(WMP.URL);
+                playersSteps[0] = false;
+                playersSteps[1] = false;
             }
         }
 
@@ -97,23 +101,31 @@ namespace GuessTheMelody
 
         private void fGame_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.A)
+            if (!timer1.Enabled) return;
+            if (e.KeyData == Keys.A && !playersSteps[0])
             {
+                //SoundPlayer sp = new SoundPlayer("Resources\\1.wav");
+                //sp.PlaySync();
                 GamePause();
                 fMessage fm = new fMessage();
                 fm.lblPlayer.Text = "Player 1";
+                playersSteps[0] = true;
                 if (fm.ShowDialog()== DialogResult.Yes)
-                {
+                {   
                     lblPlayer1Points.Text = Convert.ToString(Convert.ToInt32(lblPlayer1Points.Text) + 1);
                     PlayNextSong();
                 }
                 GamePlay();
             }
-            if (e.KeyData == Keys.F)
+            if (e.KeyData == Keys.F && !playersSteps[1])
             {
+                //SoundPlayer sp = new SoundPlayer("Resources\\2.wav");
+                //sp.PlaySync();
                 GamePause();
                 fMessage fm = new fMessage();
-                fm.lblPlayer.Text = "Player 2";
+                fm.lblPlayer.Text = "Player 2";         
+                playersSteps[1] = true;
+
                 if (fm.ShowDialog() == DialogResult.Yes)
                 {
                     lblPlayer2Points.Text = Convert.ToString(Convert.ToInt32(lblPlayer2Points.Text) + 1);

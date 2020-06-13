@@ -54,6 +54,7 @@
             this.WMP.Size = new System.Drawing.Size(36, 32);
             this.WMP.TabIndex = 0;
             this.WMP.Visible = false;
+            this.WMP.OpenStateChange += new AxWMPLib._WMPOCXEvents_OpenStateChangeEventHandler(this.WMP_OpenStateChange);
             // 
             // btnNextSong
             // 
@@ -154,9 +155,10 @@
             // lblMusicDuration
             // 
             this.lblMusicDuration.AutoSize = true;
-            this.lblMusicDuration.Location = new System.Drawing.Point(379, 195);
+            this.lblMusicDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblMusicDuration.Location = new System.Drawing.Point(374, 179);
             this.lblMusicDuration.Name = "lblMusicDuration";
-            this.lblMusicDuration.Size = new System.Drawing.Size(16, 17);
+            this.lblMusicDuration.Size = new System.Drawing.Size(43, 46);
             this.lblMusicDuration.TabIndex = 9;
             this.lblMusicDuration.Text = "0";
             // 

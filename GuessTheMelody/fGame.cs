@@ -28,13 +28,16 @@ namespace GuessTheMelody
         private void PlayNextSong()
         {
             if (Victorina.playList.Count == 0) EndGame();
-            musicDuration = Victorina.musicDuration;
-            int n = rnd.Next(0, Victorina.playList.Count);
-            WMP.URL = Victorina.playList[n];
-            Victorina.playList.RemoveAt(n);
-            lblCount.Text = Victorina.playList.Count.ToString();
-            timer1.Start();
-            lblMusicDuration.Text = musicDuration.ToString();
+            else
+            {
+                musicDuration = Victorina.musicDuration;
+                int n = rnd.Next(0, Victorina.playList.Count);
+                WMP.URL = Victorina.playList[n];
+                Victorina.playList.RemoveAt(n);
+                lblCount.Text = Victorina.playList.Count.ToString();
+                timer1.Start();
+                lblMusicDuration.Text = musicDuration.ToString();
+            }
         }
 
         private void fGame_FormClosed(object sender, FormClosedEventArgs e)
@@ -93,22 +96,37 @@ namespace GuessTheMelody
 
         private void fGame_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.A)
+            if (e.KeyData == Keys.A)
             {
                 GamePause();
-                if(MessageBox.Show("Is the answer right?","Player 1",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                fMessage fm = new fMessage();
+                fm.lblPlayer.Text = "Player 1";
+                if (fm.ShowDialog()== DialogResult.Yes)
                 {
-                    lblPlayer1Points.Text = Convert.ToString(Convert.ToInt32(lblPlayer1Points)+1);
-                    return;
-                }
-                GamePlay();
-                if (MessageBox.Show("Is the answer right?", "Player 2", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    lblPlayer2Points.Text = Convert.ToString(Convert.ToInt32(lblPlayer2Points) + 1);
-                    return;
+                    lblPlayer1Points.Text = Convert.ToString(Convert.ToInt32(lblPlayer1Points.Text) + 1);
+                    PlayNextSong();
                 }
                 GamePlay();
             }
+            if (e.KeyData == Keys.F)
+            {
+                GamePause();
+                fMessage fm = new fMessage();
+                fm.lblPlayer.Text = "Player 2";
+                if (fm.ShowDialog() == DialogResult.Yes)
+                {
+                    lblPlayer2Points.Text = Convert.ToString(Convert.ToInt32(lblPlayer2Points.Text) + 1);
+                    PlayNextSong();
+                }
+                GamePlay();
+            }
+        }
+
+        private void WMP_OpenStateChange(object sender, AxWMPLib._WMPOCXEvents_OpenStateChangeEvent e)
+        {
+            if (Victorina.randomStart)
+                if (WMP.openState == WMPLib.WMPOpenState.wmposMediaOpen)
+                    WMP.Ctlcontrols.currentPosition = rnd.Next(0, (int)WMP.currentMedia.duration / 2);
         }
     }
 }

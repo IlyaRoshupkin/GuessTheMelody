@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
 
 namespace GuessTheMelody
 {
@@ -99,12 +98,9 @@ namespace GuessTheMelody
         {
             if (e.KeyData == Keys.A)
             {
-                
                 GamePause();
                 fMessage fm = new fMessage();
                 fm.lblPlayer.Text = "Player 1";
-                SoundPlayer sp = new SoundPlayer("");
-                sp.PlaySync();
                 if (fm.ShowDialog()== DialogResult.Yes)
                 {
                     lblPlayer1Points.Text = Convert.ToString(Convert.ToInt32(lblPlayer1Points.Text) + 1);
@@ -117,8 +113,6 @@ namespace GuessTheMelody
                 GamePause();
                 fMessage fm = new fMessage();
                 fm.lblPlayer.Text = "Player 2";
-                SoundPlayer sp = new SoundPlayer("");
-                sp.PlaySync();
                 if (fm.ShowDialog() == DialogResult.Yes)
                 {
                     lblPlayer2Points.Text = Convert.ToString(Convert.ToInt32(lblPlayer2Points.Text) + 1);

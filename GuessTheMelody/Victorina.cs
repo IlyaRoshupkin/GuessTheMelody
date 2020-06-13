@@ -5,19 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Microsoft.Win32;
-using System.Windows.Forms;
 
 namespace GuessTheMelody
 {
     static class Victorina
     {
         static public List<string> playList = new List<string>();
-        static public int gameDuration = 25;
-        static public int musicDuration = 5;
+        static public int gameDuration = 60;
+        static public int musicDuration = 0;
         static public bool randomStart = false;
         static public string lastFolder = "";
         static public bool allDirectories = false;
-        static public int answerTime = 5;
 
         static public void ReadMusic()
         {
@@ -29,7 +27,6 @@ namespace GuessTheMelody
             }
             catch
             {
-                MessageBox.Show("The playlist is abcient.");
             }
         }
 
@@ -45,9 +42,8 @@ namespace GuessTheMelody
                 rk.SetValue("LastFolder", lastFolder);
                 rk.SetValue("GameDuration", gameDuration);
                 rk.SetValue("MusicDuration", musicDuration);
-                rk.SetValue("AllDirectories", allDirectories);
+                rk.SetValue("AllDirections", allDirectories);
                 rk.SetValue("RandomStart", randomStart);
-                rk.SetValue("Time for answer", answerTime);
             }
             finally
             {
@@ -67,15 +63,7 @@ namespace GuessTheMelody
                     randomStart = Convert.ToBoolean(rk.GetValue("RandomStart"));
                     musicDuration = (int)rk.GetValue("MusicDuration");
                     allDirectories = Convert.ToBoolean(rk.GetValue("AllDirectories"));
-                    answerTime = (int)rk.GetValue("Time for answer");
                 }
-            }
-            catch
-            {
-                if(MessageBox.Show("The settings are abcient.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
-                {
-                    WriteParam();
-                } 
             }
             finally
             {

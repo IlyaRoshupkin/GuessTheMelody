@@ -13,7 +13,6 @@ namespace GuessTheMelody
 {
     public partial class fSettigs : Form
     {
-        
         public fSettigs()
         {
             InitializeComponent();
@@ -40,7 +39,6 @@ namespace GuessTheMelody
             Victorina.gameDuration = Convert.ToInt32(cbGameDuration.Text);
             Victorina.musicDuration = Convert.ToInt32(cbMusicDuration.Text);
             Victorina.randomStart = cbRandomStart.Checked;
-            Victorina.answerTime = Convert.ToInt32(cbAnswerTime.Text);
             Victorina.WriteParam();
             this.Hide();
         }
@@ -51,7 +49,6 @@ namespace GuessTheMelody
             cbGameDuration.Text = Victorina.gameDuration.ToString();
             cbMusicDuration.Text = Victorina.musicDuration.ToString();
             cbRandomStart.Checked = Victorina.randomStart;
-            cbAnswerTime.Text = Victorina.answerTime.ToString();
         }
 
         private void btnCansel_Click(object sender, EventArgs e)
@@ -65,7 +62,6 @@ namespace GuessTheMelody
             lbMusicList.Items.Clear();
             lbMusicList.Items.AddRange(Victorina.playList.ToArray());
             Set();
-            
         }
     }
 }

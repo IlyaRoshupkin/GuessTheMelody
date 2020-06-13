@@ -35,10 +35,7 @@
             this.btnCansel = new System.Windows.Forms.Button();
             this.cbAllDir = new System.Windows.Forms.CheckBox();
             this.gbParams = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbKeysPlayer1 = new System.Windows.Forms.ComboBox();
-            this.cbKeysPlayer2 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbRandomStart = new System.Windows.Forms.CheckBox();
@@ -46,7 +43,7 @@
             this.cbGameDuration = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbAnswerTime = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gbParams.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,14 +112,11 @@
             // 
             // gbParams
             // 
-            this.gbParams.Controls.Add(this.label6);
-            this.gbParams.Controls.Add(this.label5);
-            this.gbParams.Controls.Add(this.cbKeysPlayer1);
-            this.gbParams.Controls.Add(this.cbKeysPlayer2);
+            this.gbParams.Controls.Add(this.comboBox1);
+            this.gbParams.Controls.Add(this.comboBox2);
             this.gbParams.Controls.Add(this.label3);
             this.gbParams.Controls.Add(this.label4);
             this.gbParams.Controls.Add(this.cbRandomStart);
-            this.gbParams.Controls.Add(this.cbAnswerTime);
             this.gbParams.Controls.Add(this.cbMusicDuration);
             this.gbParams.Controls.Add(this.cbGameDuration);
             this.gbParams.Controls.Add(this.label2);
@@ -134,46 +128,14 @@
             this.gbParams.TabStop = false;
             this.gbParams.Text = "Parameters";
             // 
-            // label6
+            // comboBox2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(232, 121);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 17);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Time for Answer";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 17);
-            this.label5.TabIndex = 9;
-            // 
-            // cbKeysPlayer1
-            // 
-            this.cbKeysPlayer1.FormattingEnabled = true;
-            this.cbKeysPlayer1.Items.AddRange(new object[] {
-            "Q",
-            "A",
-            "Z"});
-            this.cbKeysPlayer1.Location = new System.Drawing.Point(314, 30);
-            this.cbKeysPlayer1.Name = "cbKeysPlayer1";
-            this.cbKeysPlayer1.Size = new System.Drawing.Size(59, 24);
-            this.cbKeysPlayer1.TabIndex = 7;
-            this.cbKeysPlayer1.Text = "A";
-            // 
-            // cbKeysPlayer2
-            // 
-            this.cbKeysPlayer2.FormattingEnabled = true;
-            this.cbKeysPlayer2.Items.AddRange(new object[] {
-            "RFV"});
-            this.cbKeysPlayer2.Location = new System.Drawing.Point(314, 65);
-            this.cbKeysPlayer2.Name = "cbKeysPlayer2";
-            this.cbKeysPlayer2.Size = new System.Drawing.Size(59, 24);
-            this.cbKeysPlayer2.TabIndex = 8;
-            this.cbKeysPlayer2.Text = "F";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(314, 65);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(59, 24);
+            this.comboBox2.TabIndex = 8;
+            this.comboBox2.Text = "F";
             // 
             // label3
             // 
@@ -255,21 +217,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Game Duration";
             // 
-            // cbAnswerTime
+            // comboBox1
             // 
-            this.cbAnswerTime.FormattingEnabled = true;
-            this.cbAnswerTime.Items.AddRange(new object[] {
-            "5",
-            "10",
-            "15",
-            "20",
-            "25",
-            "30"});
-            this.cbAnswerTime.Location = new System.Drawing.Point(371, 118);
-            this.cbAnswerTime.Name = "cbAnswerTime";
-            this.cbAnswerTime.Size = new System.Drawing.Size(57, 24);
-            this.cbAnswerTime.TabIndex = 3;
-            this.cbAnswerTime.Text = "5";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(314, 30);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(59, 24);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "A";
             // 
             // fSettigs
             // 
@@ -307,12 +262,9 @@
         private System.Windows.Forms.CheckBox cbRandomStart;
         private System.Windows.Forms.ComboBox cbMusicDuration;
         private System.Windows.Forms.ComboBox cbGameDuration;
+        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbAnswerTime;
-        public System.Windows.Forms.ComboBox cbKeysPlayer2;
-        public System.Windows.Forms.ComboBox cbKeysPlayer1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

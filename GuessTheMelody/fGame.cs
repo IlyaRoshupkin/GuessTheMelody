@@ -102,7 +102,7 @@ namespace GuessTheMelody
         private void fGame_KeyDown(object sender, KeyEventArgs e)
         {
             if (!timer1.Enabled) return;
-            if (e.KeyData == Keys.A && !playersSteps[0])
+            if (e.KeyData.ToString() == Victorina.player1Key && !playersSteps[0])
             {
                 //SoundPlayer sp = new SoundPlayer("Resources\\1.wav");
                 //sp.PlaySync();
@@ -117,7 +117,7 @@ namespace GuessTheMelody
                 }
                 GamePlay();
             }
-            if (e.KeyData == Keys.F && !playersSteps[1])
+            if (e.KeyData.ToString() == Victorina.player2Key.ToString() && !playersSteps[1])
             {
                 //SoundPlayer sp = new SoundPlayer("Resources\\2.wav");
                 //sp.PlaySync();

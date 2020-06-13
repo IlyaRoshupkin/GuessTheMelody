@@ -37,8 +37,16 @@ namespace GuessTheMelody
 
         private void fMain_Load(object sender, EventArgs e)
         {
-            Victorina.ReadParam();
-            Victorina.ReadMusic();
+            try
+            {
+                Victorina.ReadParam();
+                Victorina.ReadMusic();
+            }
+            catch
+            {
+                Victorina.WriteParam();
+            }
+            
         }
     }
 }

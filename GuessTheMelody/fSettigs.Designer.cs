@@ -35,8 +35,10 @@
             this.btnCansel = new System.Windows.Forms.Button();
             this.cbAllDir = new System.Windows.Forms.CheckBox();
             this.gbParams = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbAnswerTime = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbPlayer1Key = new System.Windows.Forms.ComboBox();
+            this.cbPlayer2Key = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbRandomStart = new System.Windows.Forms.CheckBox();
@@ -44,8 +46,6 @@
             this.cbGameDuration = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbAnswerTime = new System.Windows.Forms.ComboBox();
             this.gbParams.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +78,7 @@
             this.btnClearList.TabIndex = 2;
             this.btnClearList.Text = "Clear List";
             this.btnClearList.UseVisualStyleBackColor = true;
+            this.btnClearList.Click += new System.EventHandler(this.btnClearList_Click);
             // 
             // btnOK
             // 
@@ -116,8 +117,8 @@
             // 
             this.gbParams.Controls.Add(this.cbAnswerTime);
             this.gbParams.Controls.Add(this.label5);
-            this.gbParams.Controls.Add(this.comboBox1);
-            this.gbParams.Controls.Add(this.comboBox2);
+            this.gbParams.Controls.Add(this.cbPlayer1Key);
+            this.gbParams.Controls.Add(this.cbPlayer2Key);
             this.gbParams.Controls.Add(this.label3);
             this.gbParams.Controls.Add(this.label4);
             this.gbParams.Controls.Add(this.cbRandomStart);
@@ -132,23 +133,58 @@
             this.gbParams.TabStop = false;
             this.gbParams.Text = "Parameters";
             // 
-            // comboBox1
+            // cbAnswerTime
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(314, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(59, 24);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "A";
+            this.cbAnswerTime.FormattingEnabled = true;
+            this.cbAnswerTime.Items.AddRange(new object[] {
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbAnswerTime.Location = new System.Drawing.Point(322, 117);
+            this.cbAnswerTime.Name = "cbAnswerTime";
+            this.cbAnswerTime.Size = new System.Drawing.Size(51, 24);
+            this.cbAnswerTime.TabIndex = 10;
+            this.cbAnswerTime.Text = "5";
             // 
-            // comboBox2
+            // label5
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(314, 65);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(59, 24);
-            this.comboBox2.TabIndex = 8;
-            this.comboBox2.Text = "F";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(232, 120);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Answer time";
+            // 
+            // cbPlayer1Key
+            // 
+            this.cbPlayer1Key.FormattingEnabled = true;
+            this.cbPlayer1Key.Items.AddRange(new object[] {
+            "Q",
+            "A",
+            "Z"});
+            this.cbPlayer1Key.Location = new System.Drawing.Point(314, 30);
+            this.cbPlayer1Key.Name = "cbPlayer1Key";
+            this.cbPlayer1Key.Size = new System.Drawing.Size(59, 24);
+            this.cbPlayer1Key.TabIndex = 7;
+            this.cbPlayer1Key.Text = "A";
+            // 
+            // cbPlayer2Key
+            // 
+            this.cbPlayer2Key.FormattingEnabled = true;
+            this.cbPlayer2Key.Items.AddRange(new object[] {
+            "R",
+            "F",
+            "V"});
+            this.cbPlayer2Key.Location = new System.Drawing.Point(314, 65);
+            this.cbPlayer2Key.Name = "cbPlayer2Key";
+            this.cbPlayer2Key.Size = new System.Drawing.Size(59, 24);
+            this.cbPlayer2Key.TabIndex = 8;
+            this.cbPlayer2Key.Text = "F";
             // 
             // label3
             // 
@@ -230,33 +266,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Game Duration";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(232, 120);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Answer time";
-            // 
-            // cbAnswerTime
-            // 
-            this.cbAnswerTime.FormattingEnabled = true;
-            this.cbAnswerTime.Items.AddRange(new object[] {
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
-            this.cbAnswerTime.Location = new System.Drawing.Point(322, 117);
-            this.cbAnswerTime.Name = "cbAnswerTime";
-            this.cbAnswerTime.Size = new System.Drawing.Size(51, 24);
-            this.cbAnswerTime.TabIndex = 10;
-            this.cbAnswerTime.Text = "5";
-            // 
             // fSettigs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -293,10 +302,10 @@
         private System.Windows.Forms.CheckBox cbRandomStart;
         private System.Windows.Forms.ComboBox cbMusicDuration;
         private System.Windows.Forms.ComboBox cbGameDuration;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbPlayer2Key;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPlayer1Key;
         private System.Windows.Forms.ComboBox cbAnswerTime;
         private System.Windows.Forms.Label label5;
     }

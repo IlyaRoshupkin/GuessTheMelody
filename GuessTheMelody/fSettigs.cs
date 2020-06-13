@@ -40,6 +40,8 @@ namespace GuessTheMelody
             Victorina.musicDuration = Convert.ToInt32(cbMusicDuration.Text);
             Victorina.randomStart = cbRandomStart.Checked;
             Victorina.answerTime = Convert.ToInt32(cbAnswerTime.Text);
+            Victorina.player1Key = cbPlayer1Key.Text.ToString();
+            Victorina.player2Key = cbPlayer2Key.Text.ToString();
             Victorina.WriteParam();
             this.Hide();
         }
@@ -51,6 +53,8 @@ namespace GuessTheMelody
             cbMusicDuration.Text = Victorina.musicDuration.ToString();
             cbRandomStart.Checked = Victorina.randomStart;
             cbAnswerTime.Text = Victorina.answerTime.ToString();
+            cbPlayer1Key.Text = Victorina.player1Key.ToString();
+            cbPlayer2Key.Text = Victorina.player2Key.ToString();
         }
 
         private void btnCansel_Click(object sender, EventArgs e)
@@ -64,6 +68,11 @@ namespace GuessTheMelody
             lbMusicList.Items.Clear();
             lbMusicList.Items.AddRange(Victorina.playList.ToArray());
             Set();
+        }
+
+        private void btnClearList_Click(object sender, EventArgs e)
+        {
+            lbMusicList.Items.Clear();
         }
     }
 }

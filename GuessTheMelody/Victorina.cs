@@ -19,6 +19,8 @@ namespace GuessTheMelody
         static public bool allDirectories = false;
         static public int answerTime = 5;
         static public string answer = "";
+        static public string player1Key = Keys.A.ToString();
+        static public string player2Key = Keys.F.ToString();
 
         static public void ReadMusic()
         {
@@ -49,6 +51,8 @@ namespace GuessTheMelody
                 rk.SetValue("AllDirectories", allDirectories);
                 rk.SetValue("RandomStart", randomStart);
                 rk.SetValue("AnswerTime", answerTime);
+                rk.SetValue("Player1Key", player1Key);
+                rk.SetValue("Player2Key", player2Key);
             }
             finally
             {
@@ -69,6 +73,8 @@ namespace GuessTheMelody
                     musicDuration = (int)rk.GetValue("MusicDuration");
                     allDirectories = Convert.ToBoolean(rk.GetValue("AllDirectories"));
                     answerTime = (int)rk.GetValue("AnswerTime");
+                    player1Key = rk.GetValue("Player1Key").ToString();
+                    player2Key = rk.GetValue("Player2Key").ToString();
                 }
             }
             catch
